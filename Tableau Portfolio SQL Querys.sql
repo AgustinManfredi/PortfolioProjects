@@ -1,6 +1,6 @@
 /*
 
-Queries used for Tableau Project
+Queries usadas para el proyecto de Tableau 
 
 */
 
@@ -15,8 +15,8 @@ where continent is not null
 --Group By date
 order by 1,2
 
--- Just a double check based off the data provided
--- numbers are extremely close so we will keep them - The Second includes "International"  Location
+-- Chequeando los datos
+-- Los numeros son muy cercanos entonces los utilizo - La segunda include la locación "International" 
 
 
 --Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
@@ -29,8 +29,6 @@ order by 1,2
 
 -- 2. 
 
--- We take these out as they are not inluded in the above queries and want to stay consistent
--- European Union is part of Europe
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
@@ -70,8 +68,8 @@ order by PercentPopulationInfected desc
 
 
 
--- Queries I originally had, but excluded some because it created too long of video
--- Here only in case you want to check them out
+-- Queries que no fueron utilizadas para la visualización
+
 
 
 -- 1.
@@ -99,8 +97,7 @@ where continent is not null
 order by 1,2
 
 
--- Just a double check based off the data provided
--- numbers are extremely close so we will keep them - The Second includes "International"  Location
+-- Haciendo un chequeo de los datos
 
 
 --Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
@@ -113,8 +110,7 @@ order by 1,2
 
 -- 3.
 
--- We take these out as they are not inluded in the above queries and want to stay consistent
--- European Union is part of Europe
+-- Union europea es parte de Europa
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
@@ -144,7 +140,7 @@ order by PercentPopulationInfected desc
 --where continent is not null 
 --order by 1,2
 
--- took the above query and added population
+-- Use la query de arriba y le sume la población
 Select Location, date, population, total_cases, total_deaths
 From PortfolioProject..CovidDeaths
 --Where location like '%states%'
