@@ -10,7 +10,7 @@ Queries usadas para el proyecto de Tableau
 
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 where continent is not null 
 --Group By date
 order by 1,2
@@ -21,7 +21,7 @@ order by 1,2
 
 --Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 --From PortfolioProject..CovidDeaths
-----Where location like '%states%'
+----Where location like '%argentina%'
 --where location = 'World'
 ----Group By date
 --order by 1,2
@@ -32,7 +32,7 @@ order by 1,2
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 Where continent is null 
 and location not in ('World', 'European Union', 'International')
 Group by location
@@ -43,7 +43,7 @@ order by TotalDeathCount desc
 
 Select Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 Group by Location, Population
 order by PercentPopulationInfected desc
 
@@ -53,7 +53,7 @@ order by PercentPopulationInfected desc
 
 Select Location, Population,date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 Group by Location, Population, date
 order by PercentPopulationInfected desc
 
@@ -91,7 +91,7 @@ order by 1,2,3
 -- 2.
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 where continent is not null 
 --Group By date
 order by 1,2
@@ -102,7 +102,7 @@ order by 1,2
 
 --Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 --From PortfolioProject..CovidDeaths
-----Where location like '%states%'
+----Where location like '%argentina%'
 --where location = 'World'
 ----Group By date
 --order by 1,2
@@ -114,7 +114,7 @@ order by 1,2
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 Where continent is null 
 and location not in ('World', 'European Union', 'International')
 Group by location
@@ -126,7 +126,7 @@ order by TotalDeathCount desc
 
 Select Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 Group by Location, Population
 order by PercentPopulationInfected desc
 
@@ -136,14 +136,14 @@ order by PercentPopulationInfected desc
 
 --Select Location, date, total_cases,total_deaths, (total_deaths/total_cases)*100 as DeathPercentage
 --From PortfolioProject..CovidDeaths
-----Where location like '%states%'
+----Where location like '%argentina%'
 --where continent is not null 
 --order by 1,2
 
 -- Use la query de arriba y le sume la población
 Select Location, date, population, total_cases, total_deaths
 From PortfolioProject..CovidDeaths
---Where location like '%states%'
+--Where location like '%argentina%'
 where continent is not null 
 order by 1,2
 
